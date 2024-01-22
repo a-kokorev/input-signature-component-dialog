@@ -31,3 +31,12 @@
     onClick={() => setSignatureSrc('')}
     ```
     This was not implemented as part of the package to provide users more control over how and where they want to allow signature deletion.
+
+## Example
+
+1. You can run example project that uses this component.
+2. Run `npm install`.
+3. `cd .\example`.
+4. Run `npm install`.
+5. Run `npm run dev`.
+6. And you can access the example app on the URL that is displayed in console.
