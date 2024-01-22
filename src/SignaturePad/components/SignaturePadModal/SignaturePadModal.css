@@ -70,3 +70,8 @@
 .signature-pad-modal-footer .done-button:hover {
   border-color: black;
 }
+
+.signature-pad-img-wrapper {
+  width: 100%;
+  height: 100%;
+}

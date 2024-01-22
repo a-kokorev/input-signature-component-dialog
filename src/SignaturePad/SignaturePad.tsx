@@ -64,7 +64,7 @@ const SignaturePad = ({
 
   const getDataUrlForTypedSignature = async (): Promise<string | undefined> => {
     if (!typedSignatureValue) {
-      return;
+      return '';
     }
 
     const hiddenDiv = document.createElement('div');
@@ -85,7 +85,7 @@ const SignaturePad = ({
 
     document.body.removeChild(hiddenDiv);
 
-    return canvas.toDataURL();
+    return canvas.toDataURL('image/png');
   };
 
   const onDoneClick = async (selectedTab: string) => {
@@ -99,6 +99,7 @@ const SignaturePad = ({
       const textDataUrl = await getDataUrlForTypedSignature();
 
       setSignatureSrc(textDataUrl);
+      setTypedSignatureValue('');
     }
 
     closeModal();
@@ -110,13 +111,16 @@ const SignaturePad = ({
         <div
           data-testid="signature-display-field"
           className="signature-pad-img-wrapper"
-          onClick={openModal}
+          style={{ cursor: !signatureSrc ? 'pointer' : 'default' }}
+          onClick={() => !signatureSrc && openModal()}
         >
-          <img
-            className="signature-pad-img"
-            data-testid="signature-pad-img"
-            src={signatureSrc}
-          />
+          {signatureSrc && (
+            <img
+              className="signature-pad-img"
+              data-testid="signature-pad-img"
+              src={signatureSrc}
+            />
+          )}
         </div>
       </figure>
       {isModalOpen && (
