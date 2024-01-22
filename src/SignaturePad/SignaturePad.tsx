@@ -1,13 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
-import { penColorOptions } from '../../constants/signaturePad.constants';
+import ReactSignatureCanvas from 'react-signature-canvas';
+import { penColorOptions } from './signaturePad.constants';
 import './SignaturePad.css';
 
 const SignaturePad = () => {
   const [signatureSrc, setSignatureSrc] = useState<string | undefined>();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPenColorOption, setSelectedPenColorOption] = useState(penColorOptions[2]);
-  const canvasRef = useRef<SignatureCanvas>(null);
+  let canvasRef: ReactSignatureCanvas | null = null;
 
   const handlePenColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -19,7 +20,7 @@ const SignaturePad = () => {
   }
 
   const onClearSignatureClick = () => {
-    canvasRef.current?.clear();
+    canvasRef?.clear();
   };
 
   const openModal = () => {
@@ -31,11 +32,11 @@ const SignaturePad = () => {
   }
 
   const onDoneClick = () => {
-    if (!canvasRef.current) {
+    if (!canvasRef) {
       return;
     }
 
-    setSignatureSrc(canvasRef.current.toDataURL());
+    setSignatureSrc(canvasRef.toDataURL());
     closeModal();
   };
 
