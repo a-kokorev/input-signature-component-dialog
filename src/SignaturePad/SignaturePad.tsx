@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import ReactSignatureCanvas from 'react-signature-canvas';
-import { penColorOptions } from './signaturePad.constants';
+import { penColorOptions } from './constants/signaturePad.constants';
 import { Tab, Tabs } from '@mui/material';
 import './SignaturePad.css';
 
