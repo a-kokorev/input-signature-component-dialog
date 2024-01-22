@@ -1,6 +1,6 @@
 import React from 'react';
 import { penColorOptions } from '../../constants/signaturePad.constants';
-import { PenColorOption } from '../../signaturePad.types';
+import { PenColorOption } from '../../types/signaturePad.types';
 import './PenColorSelector.css';
 
 interface Props {

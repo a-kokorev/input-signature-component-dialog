@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { typeFontFamilyOptions } from '../../constants/signaturePad.constants';
-import { FontFamilyOption, PenColorOption } from '../../signaturePad.types';
+import { FontFamilyOption, PenColorOption } from '../../types/signaturePad.types';
 import './TypeSignatureTab.css';
 import '../../SignaturePad.css';
 

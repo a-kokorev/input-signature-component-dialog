@@ -1,5 +1,5 @@
 import SignatureCanvas from 'react-signature-canvas';
-import { PenColorOption } from '../../signaturePad.types';
+import { PenColorOption } from '../../types/signaturePad.types';
 import './DrawSignatureTab.css';
 import '../../SignaturePad.css';
 

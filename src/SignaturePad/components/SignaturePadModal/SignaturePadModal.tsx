@@ -4,7 +4,7 @@ import DrawSignatureTab from '../DrawSignatureTab/DrawSignatureTab';
 import TypeSignatureTab from '../TypeSignatureTab/TypeSignatureTab';
 import SignatureCanvas from 'react-signature-canvas';
 import { Tab, Tabs } from '@mui/material';
-import { FontFamilyOption, PenColorOption } from '../../signaturePad.types';
+import { FontFamilyOption, PenColorOption } from '../../types/signaturePad.types';
 import './SignaturePadModal.css';
 
 interface Props {

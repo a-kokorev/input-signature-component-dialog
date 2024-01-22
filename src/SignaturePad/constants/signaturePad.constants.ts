@@ -1,4 +1,4 @@
-import { FontFamilyOption, PenColorOption } from "../signaturePad.types";
+import { FontFamilyOption, PenColorOption } from "../types/signaturePad.types";
 
 export const penColorOptions: PenColorOption[] = [
   {
