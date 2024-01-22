@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import html2canvas from 'html2canvas';
 import SignaturePadModal from './components/SignaturePadModal/SignaturePadModal';
-import { penColorOptions, typeFontFamilyOptions } from './signaturePad.constants';
+import { penColorOptions, typeFontFamilyOptions } from './constants/signaturePad.constants';
 import './SignaturePad.css';
 import '@fontsource/caveat/700.css';
-import '@fontsource/pacifico';
-import '@fontsource/marck-script';
-import '@fontsource/meddon';
+import '@fontsource/pacifico/400.css';
+import '@fontsource/marck-script/400.css';
+import '@fontsource/meddon/400.css';
 
 const SignaturePad = () => {
   const [signatureSrc, setSignatureSrc] = useState<string | undefined>();
@@ -105,8 +105,16 @@ const SignaturePad = () => {
   return (
     <div className="signature-pad">
       <figure className="signature-pad-figure">
-        <div className="signature-pad-img-wrapper" onClick={openModal}>
-          <img className="signature-pad-img" src={signatureSrc} />
+        <div
+          data-testid="signature-display-field"
+          className="signature-pad-img-wrapper"
+          onClick={openModal}
+        >
+          <img
+            className="signature-pad-img"
+            data-testid="signature-pad-img"
+            src={signatureSrc}
+          />
         </div>
       </figure>
       {isModalOpen && (
